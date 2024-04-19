@@ -11,13 +11,16 @@ stages:
     - task: Npm@1
       inputs:
         command: 'install'
+
     - task: Npm@1
       inputs:
         command: 'custom'
         customCommand: 'run build'
+
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: 'build'
+        PathtoPublish: '$(Build.SourcesDirectory)/path/to/build'  # Adjust this path as needed
         ArtifactName: 'drop'
         publishLocation: 'Container'
+
 
