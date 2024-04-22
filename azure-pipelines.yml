@@ -12,19 +12,20 @@ stages:
       inputs:
         nodeVersion: '6'
     - task: Npm@1
+      displayName: 'install npm'
       inputs:
         command: 'install'
+        workingDir: 'upvote'
 
     - task: Npm@1
+      displayName: 'build npm'
       inputs:
         command: 'custom'
+        workingDir: 'upvote'
         customCommand: 'run build'
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: '$(Build.BinariesDirectory)'
-        includeRootFolder: true
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-        replaceExistingArchive: true
+    
+    
+    
+    
 
 
