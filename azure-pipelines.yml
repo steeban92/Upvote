@@ -10,21 +10,21 @@ stages:
     steps: 
     - task: NodeTaskRunnerInstaller@0
       inputs:
-        nodeVersion: '6'
+        nodeVersion: '14'  # Updated Node.js version to a more recent LTS version
+
     - task: Npm@1
       displayName: 'install npm'
       inputs:
         command: 'install'
-        workingDir: 'upvote'
+        workingDir: 'upvote/package.json'
 
     - task: Npm@1
       displayName: 'build npm'
       inputs:
         command: 'custom'
-        workingDir: 'upvote'
+        workingDir: 'upvote/package.json'
         customCommand: 'run build'
-    
-    
+
     
     
 
