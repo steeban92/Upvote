@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "build": "tsc"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -21,8 +22,5 @@
     "passport": "^0.3.2",
     "passport-google-oauth2": "^0.1.6",
     "serve-favicon": "~2.4.2"
-  },
-  "dependencies": {
-    "bower": "1.8.0"
-}
+  }
 }
