@@ -10,22 +10,17 @@ stages:
     steps: 
     - task: NodeTaskRunnerInstaller@0
       inputs:
-        nodeVersion: '18.4.0'  # Updated Node.js version to a more recent LTS version
+        nodeVersion: '16'  # Updated Node.js version to a more recent LTS version
 
     - task: Npm@1
       displayName: 'install npm'
       inputs:
         command: 'install'
-        workingDir: 'upvote/package.json'
+        workingDir: 'upvote/package.json'  # Make sure this directory contains your package.json
 
     - task: Npm@1
       displayName: 'build npm'
       inputs:
         command: 'custom'
-        workingDir: 'upvote/package.json'
+        workingDir: 'upvote/package.json'  # Ensure this matches the directory with your package.json
         customCommand: 'run build'
-
-    
-    
-
-
