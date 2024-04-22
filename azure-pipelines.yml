@@ -10,7 +10,7 @@ stages:
     steps: 
     - task: NodeTaskRunnerInstaller@0
       inputs:
-        nodeVersion: '14'  # Updated Node.js version to a more recent LTS version
+        nodeVersion: '18.4.0'  # Updated Node.js version to a more recent LTS version
 
     - task: Npm@1
       displayName: 'install npm'
