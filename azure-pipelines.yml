@@ -19,11 +19,12 @@ stages:
       inputs:
         command: 'custom'
         customCommand: 'run build'
-
-    - task: PublishBuildArtifacts@1
+    - task: ArchiveFiles@2
       inputs:
-        PathtoPublish: '$(Build.SourcesDirectory)/path/to/build'  # Adjust this path as needed
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
+        rootFolderOrFile: '$(Build.BinariesDirectory)'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
 
 
